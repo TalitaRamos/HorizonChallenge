@@ -15,10 +15,7 @@ import android.widget.Toast;
 import java.util.Calendar;
 
 public class ColetaDadosActivity extends AppCompatActivity  implements TextView.OnClickListener{
-    private DatePicker datePicker;
-    private Calendar calendar;
     private TextView dataView;
-    private int dia,mes,ano;
     private Button buttonColeta;
     static final int DATE_DIALOG_ID = 0;
 
@@ -29,7 +26,6 @@ public class ColetaDadosActivity extends AppCompatActivity  implements TextView.
 
         dataView=(TextView)findViewById(R.id.dataView);
         buttonColeta=(Button) findViewById(R.id.buttonColeta);
-        calendar= Calendar.getInstance();
 
         dataView.setOnClickListener(this);
 
@@ -52,8 +48,7 @@ public class ColetaDadosActivity extends AppCompatActivity  implements TextView.
 
         switch (id) {
             case DATE_DIALOG_ID:
-                return new DatePickerDialog(this, mDateSetListener, ano, mes,
-                        dia);
+                return new DatePickerDialog(this, mDateSetListener, ano, mes, dia);
         }
         return null;
     }

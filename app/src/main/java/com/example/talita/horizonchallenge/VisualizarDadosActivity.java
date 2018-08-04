@@ -19,9 +19,9 @@ public class VisualizarDadosActivity extends AppCompatActivity {
 
         linearVisible=(LinearLayout)findViewById(R.id.linearVisible);
         buttonExibir=(Button)findViewById(R.id.buttonExibir);
-
     }
 
+    //EXIBIR OU ESCONDER LINEARLAYOUT
     public void clickBtnExibir(View view) {
         if(show){
             linearVisible.setVisibility(View.INVISIBLE);

@@ -77,10 +77,12 @@
 
         <Button
             android:id="@+id/buttonExibir"
+            style="@android:style/Widget.DeviceDefault.Button.Borderless.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Exibir detalhes"
-            android:onClick= "clickBtnExibir"/>
+            android:drawableTop="@android:drawable/arrow_down_float"
+            android:onClick="clickBtnExibir"
+            android:text="Exibir detalhes" />
 
         <LinearLayout
             android:id="@+id/linearVisible"
@@ -120,7 +122,7 @@
                 android:textSize="20sp"
                 app:fontFamily="@font/capriola" />
         </LinearLayout>
-        
+
     </LinearLayout>
 
 
