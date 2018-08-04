@@ -66,7 +66,7 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/cpf"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -125,4 +125,11 @@
             android:textColor="@android:color/black"
             android:textSize="18sp" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonColeta"
+        android:layout_width="232dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:text="Salvar" />
 </LinearLayout>

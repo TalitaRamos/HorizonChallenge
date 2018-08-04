@@ -30,7 +30,8 @@
 
         <activity
             android:name=".teste"
-            android:label="@string/title_activity_teste"></activity>
+            android:label="@string/title_activity_teste" />
+        <activity android:name=".VisualizarDadosActivity"></activity>
     </application>
 
 </manifest>
