@@ -5,13 +5,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.example.talita.horizonchallenge.Model.Pessoa;
 
 public class VisualizarDadosActivity extends AppCompatActivity {
 
     private LinearLayout linearVisible;
     private Button buttonExibir;
+    private TextView nomeView;
+    private TextView dataNasView;
     private boolean show=false;
+    private Pessoa pessoa;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +27,16 @@ public class VisualizarDadosActivity extends AppCompatActivity {
 
         linearVisible=(LinearLayout)findViewById(R.id.linearVisible);
         buttonExibir=(Button)findViewById(R.id.buttonExibir);
+        nomeView=(TextView)findViewById(R.id.nomeView);
+        dataNasView=(TextView) findViewById(R.id.dataNasView);
+
+        Intent intent = getIntent();
+        pessoa = new Pessoa();
+        pessoa.setNome(intent.getStringExtra("nome"));
+        pessoa.setDataNascimento(intent.getStringExtra("dataNascimento"));
+
+        nomeView.setText(pessoa.getNome());
+        dataNasView.setText(pessoa.getDataNascimento());
     }
 
     //EXIBIR OU ESCONDER LINEARLAYOUT

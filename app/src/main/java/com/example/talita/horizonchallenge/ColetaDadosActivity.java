@@ -15,6 +15,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.talita.horizonchallenge.Model.Pessoa;
+
 import java.util.Calendar;
 
 public class ColetaDadosActivity extends AppCompatActivity  implements TextView.OnClickListener{
@@ -25,6 +27,7 @@ public class ColetaDadosActivity extends AppCompatActivity  implements TextView.
     private RadioGroup radioGroup;
     private RadioButton radioButton4;
     static final int DATE_DIALOG_ID = 0;
+    private Pessoa pessoa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +46,13 @@ public class ColetaDadosActivity extends AppCompatActivity  implements TextView.
         buttonColeta.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             if(validarCampos()!=false){
+                pessoa = new Pessoa();
+                pessoa.setNome(nome.getText().toString().trim());
+                pessoa.setDataNascimento(dataView.getText().toString().trim());
+
                 Intent it = new Intent(ColetaDadosActivity.this, VisualizarDadosActivity.class);
+                it.putExtra("nome",pessoa.getNome());
+                it.putExtra("dataNascimento",pessoa.getDataNascimento());
                 startActivity(it);
             }
             }
@@ -114,4 +123,5 @@ public class ColetaDadosActivity extends AppCompatActivity  implements TextView.
 
         return resultado;
     }
+
 }
