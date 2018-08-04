@@ -4,30 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ColetaDadosActivity"
     android:gravity="center_horizontal"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical">
+    tools:context=".ColetaDadosActivity"
+    android:background="@drawable/background">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="165dp"
+        android:layout_height="72dp"
+        app:srcCompat="@drawable/horizon" />
 
     <LinearLayout
         android:id="@+id/coleta_form"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
-            android:layout_marginTop="38dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:text="Horizon"
             android:textColor="@android:color/black"
             android:textSize="25dp"
-            app:fontFamily="@font/capriola"
-            android:layout_height="wrap_content" />
+            app:fontFamily="@font/capriola" />
 
         <TextView
             android:id="@+id/textView2"
@@ -41,14 +48,17 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <EditText
                 android:id="@+id/nome"
-                android:layout_height="match_parent"
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:hint="Nome Completo"
                 android:inputType="text"
                 android:maxLines="1"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/black"
+                android:textSize="18sp" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -60,62 +70,59 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:hint="CPF"
                 android:ems="10"
-                android:inputType="number" />
+                android:hint="CPF"
+                android:inputType="number"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/black"
+                android:textSize="18sp" />
         </android.support.design.widget.TextInputLayout>
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sexo"
             android:layout_marginTop="20dp"
-            android:textSize="20sp" />
+            android:text="Sexo"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
 
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <RadioButton
                 android:id="@+id/radioButton3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Feminino" />
+                android:text="Feminino"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
 
             <RadioButton
                 android:id="@+id/radioButton4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Masculino" />
+                android:text="Masculino"
+                android:textColor="@android:color/black" />
         </RadioGroup>
+
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Data de nascimento"
             android:layout_marginTop="20dp"
-            android:textSize="20sp"/>
+            android:text="Data de nascimento"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/dataView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="dd/mm/aaaa"
             android:layout_marginTop="10dp"
-            android:textSize="20sp"
-            android:onClick="setDate"/>
+            android:text="dd/mm/aaaa"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
     </LinearLayout>
-
-    <!--android:imeActionId="6"
-              android:imeOptions="actionUnspecified" -->
-
-    <!--<TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />-->
-
 </LinearLayout>
