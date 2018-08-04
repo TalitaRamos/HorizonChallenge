@@ -4,21 +4,20 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.talita.horizonchallenge.Model.Pessoa;
+import com.example.talita.horizonchallenge.Repository.PessoaRepository;
 
 public class VisualizarDadosActivity extends AppCompatActivity {
 
     private LinearLayout linearVisible;
-    private Button buttonExibir;
     private TextView nomeView;
     private TextView dataNasView;
     private boolean show=false;
-    private Pessoa pessoa;
+    private TextView cpfView;
+    private TextView sexoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +25,10 @@ public class VisualizarDadosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_visualizar_dados);
 
         linearVisible=(LinearLayout)findViewById(R.id.linearVisible);
-        buttonExibir=(Button)findViewById(R.id.buttonExibir);
         nomeView=(TextView)findViewById(R.id.nomeView);
         dataNasView=(TextView) findViewById(R.id.dataNasView);
+        sexoView = (TextView)findViewById(R.id.sexoView);
+        cpfView=(TextView)findViewById(R.id.cpfView);
 
         Intent intent = getIntent();
         nomeView.setText(intent.getStringExtra("nome"));
@@ -43,6 +43,22 @@ public class VisualizarDadosActivity extends AppCompatActivity {
         }else{
             linearVisible.setVisibility(View.VISIBLE);
             show = true;
+            recuperar_onClick();
         }
+    }
+
+    //RECUPERAR OS DADOS NO BANCO DE DADOS
+    protected  void recuperar_onClick(){
+
+        Intent intent = getIntent();
+        String name =intent.getStringExtra("nome");
+
+        PessoaRepository pessoaRepository =  new PessoaRepository(this);
+        Pessoa pessoa = pessoaRepository.consulta(name);
+
+        System.out.println("cpf"+pessoa.getCpf());
+        System.out.println("nome"+pessoa.getSexo());
+        cpfView.setText(pessoa.getCpf());
+        sexoView.setText(pessoa.getSexo());
     }
 }

@@ -93,7 +93,7 @@
             android:layout_height="wrap_content">
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/radioButtonFeminino"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Feminino"
@@ -101,7 +101,7 @@
                 android:textSize="16sp" />
 
             <RadioButton
-                android:id="@+id/radioButton4"
+                android:id="@+id/radioButtonMasculino"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Masculino"

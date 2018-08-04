@@ -10,7 +10,6 @@ public class DatabaseUtil extends SQLiteOpenHelper{
     private static final String NOME_BASE_DE_DADOS = "SISTEMA.db";
     private static int VERSAO_BASE_DE_DADOS= 1;
 
-
     public DatabaseUtil(Context context) {
         super(context, NOME_BASE_DE_DADOS , null, VERSAO_BASE_DE_DADOS);
     }
@@ -21,8 +20,10 @@ public class DatabaseUtil extends SQLiteOpenHelper{
         StringBuilder stringBuilderCreateTable = new StringBuilder();
 
         stringBuilderCreateTable.append("CREATE TABLE tb_pessoa (");
-        stringBuilderCreateTable.append("       cpf INT NOT NULL, ");
-        stringBuilderCreateTable.append("       sexo    TEXT NOT NULL )");
+        stringBuilderCreateTable.append("cpf TEXT NOT NULL, ");
+        stringBuilderCreateTable.append("nome TEXT NOT NULL, ");
+        stringBuilderCreateTable.append("nascimento TEXT NOT NULL, ");
+        stringBuilderCreateTable.append("sexo TEXT NOT NULL )");
 
         db.execSQL(stringBuilderCreateTable.toString());
     }
