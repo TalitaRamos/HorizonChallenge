@@ -31,12 +31,8 @@ public class VisualizarDadosActivity extends AppCompatActivity {
         dataNasView=(TextView) findViewById(R.id.dataNasView);
 
         Intent intent = getIntent();
-        pessoa = new Pessoa();
-        pessoa.setNome(intent.getStringExtra("nome"));
-        pessoa.setDataNascimento(intent.getStringExtra("dataNascimento"));
-
-        nomeView.setText(pessoa.getNome());
-        dataNasView.setText(pessoa.getDataNascimento());
+        nomeView.setText(intent.getStringExtra("nome"));
+        dataNasView.setText(intent.getStringExtra("dataNascimento"));
     }
 
     //EXIBIR OU ESCONDER LINEARLAYOUT

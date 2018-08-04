@@ -27,7 +27,6 @@ public class ColetaDadosActivity extends AppCompatActivity  implements TextView.
     private RadioGroup radioGroup;
     private RadioButton radioButton4;
     static final int DATE_DIALOG_ID = 0;
-    private Pessoa pessoa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,13 +45,9 @@ public class ColetaDadosActivity extends AppCompatActivity  implements TextView.
         buttonColeta.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             if(validarCampos()!=false){
-                pessoa = new Pessoa();
-                pessoa.setNome(nome.getText().toString().trim());
-                pessoa.setDataNascimento(dataView.getText().toString().trim());
-
                 Intent it = new Intent(ColetaDadosActivity.this, VisualizarDadosActivity.class);
-                it.putExtra("nome",pessoa.getNome());
-                it.putExtra("dataNascimento",pessoa.getDataNascimento());
+                it.putExtra("nome",nome.getText().toString().trim());
+                it.putExtra("dataNascimento",dataView.getText().toString().trim());
                 startActivity(it);
             }
             }
