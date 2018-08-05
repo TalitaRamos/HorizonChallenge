@@ -28,7 +28,10 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".VisualizarDadosActivity"></activity>
+        <activity
+            android:name=".VisualizarDadosActivity"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>
