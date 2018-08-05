@@ -14,4 +14,17 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="horizon">Horizon</string>
+    <string name="challenge">Challenge</string>
+    <string name="nome_completo">Nome Completo</string>
+    <string name="cpf">CPF</string>
+    <string name="sexo">Sexo</string>
+    <string name="feminino">Feminino</string>
+    <string name="masculino">Masculino</string>
+    <string name="data_de_nascimento">Data de nascimento</string>
+    <string name="dd_mm_aaaa">dd/mm/aaaa</string>
+    <string name="salvar">Salvar</string>
+    <string name="nome">Nome</string>
+    <string name="textview">TextView</string>
+    <string name="exibir_detalhes">Exibir detalhes</string>
 </resources>

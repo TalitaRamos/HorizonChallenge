@@ -19,118 +19,126 @@
         android:layout_height="72dp"
         app:srcCompat="@drawable/horizon" />
 
-    <LinearLayout
-        android:id="@+id/coleta_form"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="Horizon"
-            android:textColor="@android:color/black"
-            android:textSize="25dp"
-            app:fontFamily="@font/capriola" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Challenge"
-            android:textColor="@android:color/black"
-            android:textSize="25dp"
-            app:fontFamily="@font/capriola" />
-
-        <android.support.design.widget.TextInputLayout
+        <LinearLayout
+            android:id="@+id/coleta_form"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/nome"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="Nome Completo"
-                android:inputType="text"
-                android:maxLines="1"
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/horizon"
                 android:textColor="@android:color/black"
-                android:textColorHint="@android:color/black"
-                android:textSize="18sp" />
-        </android.support.design.widget.TextInputLayout>
+                android:textSize="25sp"
+                app:fontFamily="@font/capriola" />
 
-        <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/cpf"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="CPF"
-                android:inputType="number"
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/challenge"
                 android:textColor="@android:color/black"
-                android:textColorHint="@android:color/black"
-                android:textSize="18sp" />
-        </android.support.design.widget.TextInputLayout>
+                android:textSize="25sp"
+                app:fontFamily="@font/capriola" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Sexo"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
-
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/radioButton3"
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Feminino"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:layout_marginTop="50dp">
 
-            <RadioButton
-                android:id="@+id/radioButton4"
+                <EditText
+                    android:id="@+id/nome"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/nome_completo"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="18sp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/cpf"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="@string/cpf"
+                    android:inputType="number"
+                    android:textColor="@android:color/black"
+                    android:textColorHint="@android:color/black"
+                    android:textSize="18sp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Masculino"
-                android:textColor="@android:color/black" />
-        </RadioGroup>
+                android:layout_marginTop="20dp"
+                android:text="@string/sexo"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Data de nascimento"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/dataView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="dd/mm/aaaa"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
-    </LinearLayout>
+                <RadioButton
+                    android:id="@+id/radioButtonFeminino"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/feminino"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
 
-    <Button
-        android:id="@+id/buttonColeta"
-        android:layout_width="193dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:background="@android:color/white"
-        android:text="Salvar" />
+                <RadioButton
+                    android:id="@+id/radioButtonMasculino"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/masculino"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"/>
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/data_de_nascimento"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/dataView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/dd_mm_aaaa"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/buttonColeta"
+                android:layout_width="519dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/selector_button"
+                android:text="@string/salvar" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

@@ -53,7 +53,8 @@
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/nome" />
+                android:text="@string/nome"
+                android:layout_marginTop="50dp"/>
 
             <TextView
                 android:id="@+id/nomeView"
@@ -103,7 +104,7 @@
 
                 <TextView
                     android:id="@+id/cpfView"
-                    android:layout_width="match_parent"
+                    android:layout_width="979dp"
                     android:layout_height="wrap_content"
                     android:text="@string/textview"
                     android:textColor="@android:color/black"
@@ -119,7 +120,7 @@
 
                 <TextView
                     android:id="@+id/sexoView"
-                    android:layout_width="367dp"
+                    android:layout_width="561dp"
                     android:layout_height="wrap_content"
                     android:text="@string/textview"
                     android:textColor="@android:color/black"

@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 import com.example.talita.horizonchallenge.Model.Pessoa;
 import com.example.talita.horizonchallenge.Repository.PessoaRepository;
+import com.example.talita.horizonchallenge.Uteis.MaskUtil;
+import com.example.talita.horizonchallenge.Uteis.Validador;
 
 import java.util.Calendar;
 import java.util.Locale;
@@ -45,6 +47,8 @@ public class ColetaDadosActivity extends AppCompatActivity{
         radioButtonMasculino=(RadioButton)findViewById(R.id.radioButtonMasculino);
         radioButtonFeminino=(RadioButton)findViewById(R.id.radioButtonFeminino);
 
+        cpf.addTextChangedListener(MaskUtil.mask(cpf, MaskUtil.FORMAT_CPF));
+
         // CHAMA O METODO PARA DIZER QUAL A LOCALIZAÇÃO,
         // USADO PARA TRADUZIR OS TEXTOS DO CALENDÁRIO.
         this.Localizacao();
@@ -66,7 +70,7 @@ public class ColetaDadosActivity extends AppCompatActivity{
 
     }
 
-    //VERIFICANDO SE OS CAMPOS FORAM PREENCHIDOS
+    //VERIFICANDO SE OS CAMPOS FORAM PREENCHIDOS E SE O CPF É VÁLIDO
     private boolean validarCampos(){
         boolean resultado=true;
 
@@ -86,6 +90,7 @@ public class ColetaDadosActivity extends AppCompatActivity{
         }
 
         int selectedItemID =radioGroup.getCheckedRadioButtonId();
+
         if(selectedItemID<=0){
             resultado=false;
             radioButtonMasculino.setError("Selecione uma opção!");
@@ -93,6 +98,9 @@ public class ColetaDadosActivity extends AppCompatActivity{
             radioButtonMasculino.setError(null);
         }
 
+        if(Validador.validateCPF(cpf.getText().toString())==false){
+            cpf.setError("CPF inválido!");
+        }
         return resultado;
     }
 
